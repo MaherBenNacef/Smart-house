@@ -1,0 +1,2 @@
+# Smart-house
+L’objectif de ce projet est de réaliser une application web qui permet la surveillance d’intérieurs de la maison à traver des capteurs connecté à la carte raspberry dans le but de détecter l'humidité , température , gaz ,etc et envoyer ces données au firebase (base de données NoSQL temps réel) puis stocker ces valeurs dans une base de donnée local pour que l'utilisateur peut voir l'historique
