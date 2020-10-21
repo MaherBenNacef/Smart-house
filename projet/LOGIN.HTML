@@ -1,0 +1,70 @@
+<?php
+?>
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>LOGIN</title>
+</head>
+<style>
+  .log {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    max-width: 500px;
+    max-height: 300px;
+    margin: 200px 200px 200px 500px;
+    text-align: center;
+    background-color: white;
+
+  }
+
+  .log button {
+    border: none;
+    outline: 0;
+    padding: 12px;
+    color: white;
+    background-color: grey;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    font-size: 18px;
+  }
+
+  .log button:hover {
+    opacity: 0.7;
+  }
+</style>
+<script>
+  function validateForm() {
+    var user = document.forms["f1"]["username"].value;
+    var pass = document.forms["f1"]["password"].value;
+    if (f1.user.value == '') {
+      alert("username is empty ! ");
+      return false;
+    }
+    if (f1.pass.value == '') {
+      alert("password is empty ! ");
+      return false;
+    }
+  }
+
+</script>
+
+<body background="login.png">
+  <div class="log">
+    <h3>LOGIN</h3>
+
+    <form name="f1" action="connexion.php" method="POST" onclick="return validateForm()">
+      USERNAME:<input type="text" name="username" placeholder="exemple@domain.com"><br><br>
+      PASSWORD:<input type="PASSWORD" name="password" placeholder="PASSWORD"><br><br>
+      <button type="submit" id="login">LOGIN</button>
+    </form>
+    <button onclick="myFunction()">CREATE ACOUNT</button>
+    <script>
+      function myFunction() {
+        location.replace("REGISTER.HTML")
+      }
+    </script>
+  </div>
+</body>
+
+</html>

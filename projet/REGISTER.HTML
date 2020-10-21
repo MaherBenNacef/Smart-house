@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Register</title>
+</head>
+<style>
+  .log {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    max-width: 500px;
+    max-height: 500px;
+    margin: 200px 200px 200px 500px;
+    text-align: center;
+    background-color: white;
+  }
+
+  .log button {
+    border: none;
+    outline: 0;
+    padding: 12px;
+    color: white;
+    background-color: grey;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    font-size: 18px;
+  }
+
+  .log button:hover {
+    opacity: 0.7;
+  }
+</style>
+<script language="Javascript">
+  function validateForm() {
+    var fname = document.forms["f1"]["fname"].value;
+    var lname = document.forms["f1"]["lname"].value;
+    var email = document.forms["f1"]["email"].value;
+    var pass = document.forms["f1"]["pass"].value;
+    var pass2 = document.forms["f1"]["pass2"].value;
+    if (f1.fname.value == '') {
+      alert("Firstname field is empty");
+      return false;
+    }
+    if (f1.lname.value == '') {
+      alert("Lastname field is empty ! ");
+      return false;
+    }
+    if (email.indexOf("@") == -1) {
+      alert("Email is incorrect ! ");
+      return false;
+    }
+    if (f1.pass.value != f1.pass2.value) {
+      alert("Password is incorrect ! ");
+      return false;
+    }
+  }
+
+</script>
+
+<body background="login.png">
+  <div class="log">
+    <h3>REGISTER</h3>
+    <form name="f1" action="inscrit.php" method="POST" enctype="multipart/form-data" align="center"
+      onclick="return validateForm()">
+      FIRST NAME:<br>
+      <input type="text" name="fname" id="fname"><br><br>
+      LAST NAME:<br>
+      <input type="text" name="lname" id="lname"><br><br>
+      EMAIL:<br>
+      <input type="text" name="email" id="email"><br><br>
+      PASSWORD:<br>
+      <input type="PASSWORD" name="pass" id="pass"><br><br>
+      CONFIRM PASSWORD:<br>
+      <input type="PASSWORD" name="pass2" id="pass2"><br><br>
+      <button type="submit">REGISTER</button><br>
+    </form>
+    <button type="reset">RESET</button>
+  </div>
+</body>
+
+</html>

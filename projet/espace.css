@@ -1,0 +1,15 @@
+.navbar-nav navbar-left {
+ padding:0;
+ margin:0;
+ list-style-type:none;
+}
+
+
+
+
+.nav-item {
+
+ margin-left:20px;
+ float:left;
+
+}

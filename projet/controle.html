@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Application Web</title>
+ <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+  <script type="text/javascript" src="affichageenvironement.js"></script>
+<link rel="stylesheet" type="text/css" href="espace.css">
+</head>
+<body background="env.jpg">
+
+
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#"><u><B>Smart Home</B></u></a>
+    </div>
+  <ul class="navbar-nav navbar-left">
+      <li class="nav-item"><a href="accueil.html" class="nav-link"><i class="fas fa-home"> Home</i></a></li>
+      <li class="nav-item"><a href="carte.html" class="nav-link"><i class="fas fa-cog"> card state</i></a></li>
+      <li class="nav-item"><a href="controle.html" class="nav-link"><i class="fas fa-cloud"> Environmental monitoring</i></a></li>
+      <li class="nav-item"><a href="affichage.html" class="nav-link"><i class="fas fa-th-list">  Environmental history</i></a></li>
+      <li class="nav-item"><a href="aff.html" class="nav-link"><i class="fas fa-list-alt">  Card history</i></a></li>
+    </ul>
+    <ul class="navbar-nav" navbar-right>
+      <li class="nav-item"><a href="index.HTML" class="nav-link"><i class="fas fa-sign-in-alt"> Disonnect</i></a></li>
+    </ul>
+  </div>
+</nav>
+  
+  <div class="col-xs-12" align="center">
+               <!--<img class="img-responsive" src="img-01.jpg" width="500" height="500">-->
+
+               
+                <form action="ajouter.php" method="post" name="form" id="form" onsubmit="return tester()" >
+               <h1 align="center" style="color: #FFFF99" >State of the environment</h1><br>
+               <h3 style="color: #FFFF99">Humidity</h3><br>
+               <input type="text" name="Humidité" id="Humidité"><br>
+               <h3 style="color: #FFFF99">Temperature</h3>
+               <input type="text" name="Température" id="Température"><br>
+               <h3 style="color: #FFFF99">Distance</h3>
+               <input type="text" name="Distance" id="Distance"><br><br>
+              
+              
+                <button type="submit" id="ajouter" class="btn btn-secondary" name="ajouter" >Save Data</button>
+           <script language="Javascript">
+                  function tester() {
+                    if (form.Humidité.value == '') {
+                      alert('Humidité est null !');
+                      return false;
+                    }
+                    if (form.Température.value == '') {
+                      alert('Température est null !');
+                      return false;
+                    }
+                    if (form.Distance.value == '') {
+                      alert('Distance est null !');
+                      return false;
+                    }
+                    if (form.Humidité.value == 0) {
+                      alert('Humidité egale 0 impossible !');
+                      return false;
+                    }
+                    if (form.Température.value == 0) {
+                      alert('Température egale 0 impossible !');
+                      return false;
+                    }
+                    if (form.Distance.value == 0) {
+                      alert('Distance egale 0 impossible !');
+                      return false;
+                    }
+                    if (form.Humidité.value < 0) {
+                      alert('Humidité négative !');
+                      return false;
+                    }
+                    if (form.Température.value < 0) {
+                      alert('Température négative !');
+                      return false;
+                    }
+                    if (form.Distance.value < 0) {
+                      alert('Distance négative !');
+                      return false;
+                    }
+                    
+                  }
+
+                </script>
+                </form>
+                <br>
+                <button type="submit" id="afficher" class="btn btn-secondary">Show Data</button>
+            </div>
+
+</body>
+</html>
